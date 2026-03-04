@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Tienda Virtual{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Bienvenido a la Tienda Virtual</h1>
+        <p class="lead">Encuentra los mejores productos al mejor precio</p>
+        
+        <!-- Mostrar productos destacados -->
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop de Alto Rendimiento</h5>
+                        <p class="card-text">Laptop potente ideal para trabajo y gaming</p>
+                        <p class="card-text"><strong>$1,500.00</strong></p>
+                        <button class="btn btn-primary" onclick="addToCart(1)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mouse Inalámbrico</h5>
+                        <p class="card-text">Mouse ergonómico de alta precisión</p>
+                        <p class="card-text"><strong>$25.50</strong></p>
+                        <button class="btn btn-primary" onclick="addToCart(2)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Teclado Mecánico</h5>
+                        <p class="card-text">Teclado RGB con switches mecánicos</p>
+                        <p class="card-text"><strong>$89.99</strong></p>
+                        <button class="btn btn-primary" onclick="addToCart(3)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

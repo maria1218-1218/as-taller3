@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Carrito - Tienda Virtual{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Mi Carrito</h1>
+        
+        <div class="table-responsive mt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-item">
+                        <td>Laptop</td>
+                        <td>$1,500.00</td>
+                        <td>
+                            <input type="number" value="1" min="1" class="form-control" style="width: 80px;" onchange="updateCartQuantity(1, this.value)">
+                        </td>
+                        <td>$1,500.00</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" onclick="removeFromCart(1)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-8"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resumen del Carrito</h5>
+                        <p class="card-text">Subtotal: <strong>$1,500.00</strong></p>
+                        <p class="card-text">Impuestos: <strong>$0.00</strong></p>
+                        <hr>
+                        <p class="card-text"><strong>Total: $1,500.00</strong></p>
+                        <button class="btn btn-success w-100">Procesar Compra</button>
+                        <a href="/products" class="btn btn-secondary w-100 mt-2">Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

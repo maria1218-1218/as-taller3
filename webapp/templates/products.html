@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Productos - Tienda Virtual{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Nuestros Productos</h1>
+        
+        <!-- Mostrar grid de productos -->
+        {% if products %}
+            <div class="row mt-4">
+                {% for product in products %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description }}</p>
+                                <p class="card-text"><strong>${{ product.price }}</strong></p>
+                                <p class="card-text"><small>Stock: {{ product.stock }}</small></p>
+                                <button class="btn btn-primary" onclick="addToCart({{ product.id }})">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-warning">No hay productos disponibles</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
